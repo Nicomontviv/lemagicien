@@ -1,0 +1,640 @@
+## Épica 1: Gestión de usuarios
+
+Registro de usuario
+
+Como mago
+
+Quiero registrarme en la aplicación
+
+Para poder guardar mis datos y acceder a mis shows y eventos.
+
+Criterios de aceptación
+
+Se solicita nombre, apellido, email y contraseña.
+
+El email no puede estar repetido.
+
+La contraseña debe almacenarse cifrada.
+
+Se envía un correo electrónico para validar la cuenta.
+
+El usuario no podrá iniciar sesión hasta confirmar su correo.
+
+Escenarios
+
+Escenario 1: Registro exitoso
+
+Cuando el usuario completa nombre, apellido, email y contraseña válidos
+
+Y presiona el botón Registrarse
+
+Entonces el sistema envía un correo de confirmación
+
+Y muestra un mensaje indicando que debe verificar su correo electrónico
+
+Y la cuenta queda pendiente de validación.
+
+Cuando el usuario accede al enlace de confirmación
+
+Entonces la cuenta queda activada correctamente.
+
+Escenario 2: Email ya registrado
+
+Cuando el usuario intenta registrarse con un email existente
+
+Entonces el sistema informa que el correo ya se encuentra registrado
+
+Y no crea una nueva cuenta.
+
+Escenario 3: Datos incompletos
+
+Cuando el usuario intenta registrarse sin completar alguno de los campos obligatorios
+
+Entonces el sistema informa el error correspondiente
+
+Y no permite completar el registro.
+
+---
+
+Inicio de sesión
+
+Como usuario registrado
+
+Quiero iniciar sesión
+
+Para acceder a mi información.
+
+Criterios de aceptación
+
+Se valida email y contraseña.
+
+Si los datos son incorrectos se informa el error.
+
+La cuenta debe encontrarse validada.
+
+Escenarios
+
+Escenario 1: Inicio de sesión exitoso
+
+Cuando el usuario ingresa un email y contraseña válidos
+
+Entonces el sistema permite el acceso
+
+Y redirige a la pantalla principal.
+
+Escenario 2: Contraseña incorrecta
+
+Cuando el usuario ingresa una contraseña incorrecta
+
+Entonces el sistema informa que las credenciales son inválidas.
+
+Escenario 3: Cuenta sin validar
+
+Cuando el usuario intenta iniciar sesión sin haber confirmado su correo electrónico
+
+Entonces el sistema informa que debe validar su cuenta antes de continuar.
+--------------------------------------------------------------------------------------
+## Épica 2: Gestión de trucos
+
+Crear truco
+
+Como mago
+
+Quiero registrar un truco
+
+Para tener organizado mi repertorio.
+
+Datos
+
+Nombre
+
+Descripción
+
+Categoría(
+
+Magia de cerca
+
+Mentalismo
+
+Salón 110
+
+Salón 180
+)
+
+Criterios de aceptación
+
+Debe existir un nombre.
+
+Debe pertenecer a una categoría.
+
+Escenarios
+
+Escenario 1: Creación exitosa
+
+Cuando el usuario completa el nombre, descripción y categoría del truco
+
+Y presiona el botón Guardar
+
+Entonces el sistema registra el truco correctamente
+
+Y lo incorpora al repertorio del usuario.
+
+Escenario 2: Nombre faltante
+
+Cuando el usuario intenta guardar un truco sin nombre
+
+Entonces el sistema informa que el nombre es obligatorio
+
+Y no registra el truco.
+
+Escenario 3: Categoría no seleccionada
+
+Cuando el usuario intenta guardar un truco sin seleccionar una categoría
+
+Entonces el sistema informa que debe seleccionar una categoría
+
+Y no registra el truco.
+
+---
+
+Editar truco
+
+Como mago
+
+Quiero modificar un truco existente
+
+Para mantener actualizada la información.
+
+Criterios de aceptación
+
+Debe permitirse modificar el nombre.
+
+Debe permitirse modificar la descripción.
+
+Debe permitirse modificar la categoría.
+
+Los cambios deben guardarse correctamente.
+
+Escenarios
+
+Escenario 1: Edición exitosa
+
+Cuando el usuario selecciona un truco existente
+
+Y modifica alguno de sus datos
+
+Y presiona Guardar
+
+Entonces el sistema actualiza la información del truco
+
+Y muestra un mensaje de confirmación.
+
+Escenario 2: Nombre vacío durante la edición
+
+Cuando el usuario elimina el nombre del truco
+
+Y presiona Guardar
+
+Entonces el sistema informa que el nombre es obligatorio
+
+Y no guarda los cambios.
+
+---
+
+Eliminar truco
+
+Como mago
+
+Quiero eliminar un truco que ya no realizo
+
+Para mantener limpio mi repertorio.
+
+Criterios de aceptación
+
+Debe solicitarse confirmación antes de eliminar.
+
+El truco debe dejar de aparecer en el listado.
+
+Escenarios
+
+Escenario 1: Eliminación exitosa
+
+Cuando el usuario selecciona un truco
+
+Y confirma la eliminación
+
+Entonces el sistema elimina el truco
+
+Y deja de mostrarlo en el repertorio.
+
+Escenario 2: Cancelación de eliminación
+
+Cuando el usuario selecciona un truco para eliminar
+
+Y cancela la operación
+
+Entonces el sistema conserva el truco
+
+Y no realiza modificaciones.
+
+---
+
+Buscar trucos
+
+Como mago
+
+Quiero filtrar trucos por nombre o categoría
+
+Para encontrarlos rápidamente.
+
+Criterios de aceptación
+
+Debe permitirse buscar por nombre.
+
+Debe permitirse filtrar por categoría.
+
+Los resultados deben mostrarse de forma inmediata.
+
+Escenarios
+
+Escenario 1: Búsqueda por nombre
+
+Cuando el usuario ingresa parte del nombre de un truco
+
+Entonces el sistema muestra los trucos que coinciden con la búsqueda.
+
+Escenario 2: Filtrado por categoría
+
+Cuando el usuario selecciona una categoría
+
+Entonces el sistema muestra únicamente los trucos pertenecientes a esa categoría.
+
+Escenario 3: Sin resultados
+
+Cuando la búsqueda no encuentra coincidencias
+
+Entonces el sistema informa que no existen trucos que cumplan con los criterios seleccionados.
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+## Épica 3: Gestión de shows
+
+Crear show
+
+Como mago
+
+Quiero crear un show prearmado
+
+Para reutilizarlo en distintos eventos.
+
+Datos
+
+Nombre del show
+
+Descripción
+
+Lista de trucos
+
+Ejemplo:
+
+Show Infantil
+
+Aparición de paloma
+
+Cartas gigantes
+
+Cuerda cortada
+
+Criterios de aceptación
+
+Debe existir un nombre para el show.
+
+Debe contener al menos un truco.
+
+El show debe quedar asociado al usuario que lo creó.
+
+Escenarios
+
+Escenario 1: Creación exitosa
+
+Cuando el usuario ingresa el nombre y descripción del show
+
+Y selecciona uno o más trucos
+
+Y presiona el botón Guardar
+
+Entonces el sistema registra el show correctamente
+
+Y lo agrega al listado de shows.
+
+Escenario 2: Nombre faltante
+
+Cuando el usuario intenta crear un show sin nombre
+
+Entonces el sistema informa que el nombre es obligatorio
+
+Y no registra el show.
+
+Escenario 3: Sin trucos asociados
+
+Cuando el usuario intenta crear un show sin seleccionar ningún truco
+
+Entonces el sistema informa que debe existir al menos un truco asociado
+
+Y no registra el show.
+
+---
+
+Asociar trucos a un show
+
+Como mago
+
+Quiero agregar o quitar trucos de un show
+
+Para diseñar la rutina.
+
+Criterios de aceptación
+
+Debe permitirse agregar trucos existentes.
+
+Debe permitirse quitar trucos asociados.
+
+Un show debe contener al menos un truco.
+
+Los cambios deben guardarse correctamente.
+
+Escenarios
+
+Escenario 1: Agregar truco
+
+Cuando el usuario selecciona un show existente
+
+Y agrega un truco del repertorio
+
+Entonces el sistema asocia el truco al show
+
+Y actualiza la lista de trucos del show.
+
+Escenario 2: Quitar truco
+
+Cuando el usuario selecciona un truco asociado a un show
+
+Y lo elimina de la lista
+
+Entonces el sistema actualiza el contenido del show correctamente.
+
+Escenario 3: Intentar dejar un show sin trucos
+
+Cuando el usuario intenta eliminar el último truco de un show
+
+Entonces el sistema informa que un show debe contener al menos un truco
+
+Y no permite realizar la operación.
+
+---
+
+Ver detalle de show
+
+Como mago
+
+Quiero visualizar todos los trucos de un show
+
+Para repasar la rutina antes de una presentación.
+
+Criterios de aceptación
+
+Debe mostrarse el nombre del show.
+
+Debe mostrarse la descripción.
+
+Debe mostrarse la lista completa de trucos asociados.
+
+Escenarios
+
+Escenario 1: Visualización exitosa
+
+Cuando el usuario selecciona un show existente
+
+Entonces el sistema muestra el nombre del show
+
+Y su descripción
+
+Y todos los trucos asociados.
+
+Escenario 2: Show sin descripción
+
+Cuando el usuario visualiza un show que no posee descripción
+
+Entonces el sistema muestra el nombre del show
+
+Y la lista de trucos asociados
+
+Y omite la descripción sin generar errores.
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+## Épica 4: Gestión de eventos
+
+Registrar evento
+
+Como mago
+
+Quiero registrar una contratación
+
+Para organizar mi agenda.
+
+Datos
+
+Nombre del cliente
+
+Fecha
+
+Hora
+
+Dirección
+
+Show contratado
+
+Monto acordado
+
+Observaciones
+
+Criterios de aceptación
+
+Debe existir un nombre de cliente.
+
+Debe especificarse fecha y hora.
+
+Debe seleccionarse un show previamente creado.
+
+El monto acordado debe ser mayor o igual a cero.
+
+El evento se crea inicialmente en estado Pendiente.
+
+Escenarios
+
+Escenario 1: Registro exitoso
+
+Cuando el usuario completa todos los datos obligatorios
+
+Y selecciona un show existente
+
+Y presiona Guardar
+
+Entonces el sistema registra el evento correctamente
+
+Y lo incorpora a la agenda.
+
+Escenario 2: Datos obligatorios faltantes
+
+Cuando el usuario intenta registrar un evento sin completar alguno de los campos obligatorios
+
+Entonces el sistema informa cuáles son los datos faltantes
+
+Y no registra el evento.
+
+Escenario 3: Show no seleccionado
+
+Cuando el usuario intenta registrar un evento sin seleccionar un show
+
+Entonces el sistema informa que debe seleccionar un show
+
+Y no registra el evento.
+
+---
+
+Marcar evento como concretado
+
+Como mago
+
+Quiero indicar que un evento fue realizado
+
+Para llevar control de mis trabajos.
+
+Estados:
+
+Pendiente
+
+Confirmado
+
+Realizado
+
+Cancelado
+
+Criterios de aceptación
+
+Debe permitirse modificar el estado del evento.
+
+Solo los eventos realizados deben contabilizarse como ingresos.
+
+Debe mantenerse un historial del estado actual del evento.
+
+Escenarios
+
+Escenario 1: Evento realizado
+
+Cuando el usuario selecciona un evento en estado Confirmado
+
+Y cambia su estado a Realizado
+
+Entonces el sistema actualiza el estado del evento
+
+Y considera el monto para el cálculo de ingresos.
+
+Escenario 2: Evento cancelado
+
+Cuando el usuario selecciona un evento
+
+Y cambia su estado a Cancelado
+
+Entonces el sistema actualiza el estado
+
+Y el evento no se contabiliza en los ingresos.
+
+Escenario 3: Confirmar evento
+
+Cuando el usuario selecciona un evento en estado Pendiente
+
+Y cambia su estado a Confirmado
+
+Entonces el sistema actualiza el estado correctamente.
+
+---
+
+Consultar agenda
+
+Como mago
+
+Quiero ver mis eventos ordenados por fecha
+
+Para planificar mi trabajo.
+
+Criterios de aceptación
+
+Los eventos deben mostrarse ordenados cronológicamente.
+
+Debe visualizarse la fecha, hora, cliente y estado del evento.
+
+Deben visualizarse eventos futuros y pasados.
+
+Escenarios
+
+Escenario 1: Consulta exitosa
+
+Cuando el usuario accede a la agenda
+
+Entonces el sistema muestra todos los eventos ordenados por fecha.
+
+Escenario 2: Agenda sin eventos
+
+Cuando el usuario accede a la agenda
+
+Y no existen eventos registrados
+
+Entonces el sistema informa que no hay eventos cargados.
+
+Escenario 3: Visualización de detalle
+
+Cuando el usuario selecciona un evento de la agenda
+
+Entonces el sistema muestra toda la información asociada al evento.
+
+---
+
+Ver ingresos
+
+Como mago
+
+Quiero visualizar cuánto dinero generan mis eventos
+
+Para controlar mis finanzas.
+
+Criterios
+
+Mostrar total mensual.
+
+Mostrar total anual.
+
+Considerar únicamente eventos realizados.
+
+Escenarios
+
+Escenario 1: Visualización de ingresos mensuales
+
+Cuando el usuario consulta los ingresos del mes actual
+
+Entonces el sistema muestra la suma de los montos de todos los eventos realizados durante ese mes.
+
+Escenario 2: Visualización de ingresos anuales
+
+Cuando el usuario consulta los ingresos del año actual
+
+Entonces el sistema muestra la suma de los montos de todos los eventos realizados durante ese año.
+
+Escenario 3: Sin eventos realizados
+
+Cuando el usuario consulta los ingresos
+
+Y no existen eventos realizados en el período seleccionado
+
+Entonces el sistema muestra un total de $0
+
+Y un mensaje indicando que no existen ingresos registrados.

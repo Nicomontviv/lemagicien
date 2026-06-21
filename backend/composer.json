@@ -1,0 +1,21 @@
+{
+    "name": "nicolas/le-magicien",
+    "description": "Backend para Le Magicien",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Nicomontviv"
+        }
+    ],
+    "require": {},
+    "config": {
+        "disable-tls": true,
+        "secure-http": false
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "http://repo.packagist.org"
+        }
+    }
+}
