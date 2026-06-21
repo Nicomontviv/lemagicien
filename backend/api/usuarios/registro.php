@@ -95,8 +95,8 @@ if ($stmtInsert->execute()) {
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
         // 👇 REEMPLAZAR CON TUS DATOS 👇
-        $mail->Username   = 'nicomontviv@gmail.com'; 
-        $mail->Password   = 'wplyuvbwdvlrzdou'; 
+        $mail->Username   = ''; 
+        $mail->Password   = ''; 
         // 👆 REEMPLAZAR CON TUS DATOS 👆
         //$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         //$mail->Port       = 465;

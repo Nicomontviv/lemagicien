@@ -1,5 +1,5 @@
-CREATE DATABASE  IF NOT EXISTS `le_magicien` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `le_magicien`;
+--CREATE DATABASE  IF NOT EXISTS `le_magicien` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+--USE `le_magicien`;
 -- MySQL dump 10.13  Distrib 8.0.38, for Win64 (x86_64)
 --
 -- Host: localhost    Database: le_magicien

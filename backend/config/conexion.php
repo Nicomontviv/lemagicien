@@ -2,6 +2,7 @@
 // backend/config/conexion.php
 
 class Conexion {
+    
     public $conn;
 
     public function getConexion() {
