@@ -46,7 +46,7 @@ const cargarEventos = async () => {
 const cargarShowsDisponibles = async () => {
   if (!usuarioId) return
   try {
-    const respuesta = await fetch(`http://localhost:8000/api/shows/buscar.php?usuario_id=${usuarioId}`)
+    const respuesta = await fetch(`/backend/api/shows/buscar.php?usuario_id=${usuarioId}`)
     if (respuesta.ok) showsDisponibles.value = await respuesta.json()
   } catch (err) {
     console.error(err)
@@ -55,7 +55,7 @@ const cargarShowsDisponibles = async () => {
 
 const cargarIngresosMes = async () => {
   try {
-    const respuesta = await fetch('http://localhost:8000/api/eventos/ingresos.php')
+    const respuesta = await fetch('/backend/api/eventos/ingresos.php')
     if (respuesta.ok) ingresosMes.value = await respuesta.json()
   } catch (err) {
     console.error(err)
